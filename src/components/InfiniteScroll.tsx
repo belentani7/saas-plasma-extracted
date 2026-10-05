@@ -241,10 +241,7 @@ export function InfiniteScroll({
 
 // Scroll Progress Indicator Component
 function ScrollProgressIndicator() {
-  const { scrollYProgress } = useScroll({
-    target: document.documentElement,
-    offset: ['start start', 'end end'],
-  });
+  const { scrollYProgress } = useScroll();
 
   const progressWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const progressOpacity = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0]);
